@@ -1,0 +1,16 @@
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    background-color: blue;
+}
+
+a {
+    color: cyan;
+}
+
+.content{
+    font-size: 14px;
+}
