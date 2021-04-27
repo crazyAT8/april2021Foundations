@@ -1,0 +1,36 @@
+section {
+    background-image: url(../images/Cats-and-Dogs.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    font-family: "Gloria Hallelujah";
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "Open Sans";
+}
+
+nav {
+    background-color: #808080;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+a {
+    color: white;
+}
