@@ -11,7 +11,7 @@ nav {
     background-color: black;
     color: white;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding: 0.25em;
     font-size: larger;
     position: fixed;
@@ -22,12 +22,46 @@ nav {
 }
 
 a {
-    color: inherit;
+    color: white;
     text-decoration: none;
+    padding: 0.25em;
+}
+
+nav > a {
+    transition: color .5s;
+}
+
+nav > a:hover {
+    color: cyan;
 }
 
 #home {
     background-image: url(../images/background.JPG);
+}
+
+#contact::before {
+    background-image: url("../images/contactbg.jpg");
+}
+
+#contact img {
+    height: 1.5em;
+    vertical-align: middle;
+    padding-bottom: 0.25em;
+    padding-right: 0.25em;
+}
+
+#contact > div {
+    display: flex;
+    flex-direction: column;
+    width: calc(2em + 12ch);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+#contact a {
+    color: #303030;
+    text-decoration: underline;
 }
 
 /*#about {
@@ -136,3 +170,20 @@ h2 {
 .paragraph_left {
     text-align: left;
 }
+
+#home img.logo {
+    transition: transform 1s;
+}
+
+#home img.logo:hover {
+    transform: rotate(360deg);
+}
+
+#contact a img {
+    transition: transform .25s
+}
+
+#contact a:hover img {
+    transform: scale(1.2, 1.2);
+}
+
