@@ -1,6 +1,7 @@
 html {
     font-family: "Open Sans", sans-serif;
-    font-size: 16pt;
+    /*font-size: 16pt;*/
+    font-size: x-large;
 }
 
 body {
@@ -54,7 +55,8 @@ nav > a:hover {
 }
 
 .logo {
-    width: 9ch;
+    height: 40vh;
+    /*width: 9ch;*/
 }
 
 .title, .logo {
@@ -321,6 +323,14 @@ article::before {
     100% {
         transform: rotateY(360deg);
     }
+}
+
+#mobile-nav, #mobile-trigger {
+    display: none;
+}
+
+#mobile-nav, #mobile-trigger, #bonus {
+    display: none;
 }
 
 /*#about {
