@@ -55,7 +55,7 @@ nav > a:hover {
 }
 
 .logo {
-    height: 40vh;
+    height: 40vh;   /* Why did you change this to 40vh??? */
     /*width: 9ch;*/
 }
 
@@ -178,7 +178,7 @@ article::before {
 }
 
 #apps > .contact {
-    grid-area: header;
+    grid-area: header;  /* this should be main */
 }
 
 #apps > div:nth-last-of-type(1) {
