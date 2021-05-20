@@ -77,6 +77,7 @@ nav > a:hover {
 
 .photobox img {
     width: 22ch;
+    /*height: 20vh;*/
 }
 
 .photobox figure {
@@ -254,6 +255,8 @@ article::before {
 .stage .cube {
     width: 22ch;
     height: 22ch;
+    /*width: 20vh;*/
+    /*height: 20vh;*/
     transform-style: preserve-3d;
     position: relative;
     animation: rotate 10s infinite linear;

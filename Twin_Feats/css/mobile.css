@@ -1,6 +1,7 @@
 html {
     /*font-size: xx-large;*/
-    font-size: x-large;
+   /*font-size: x-large;*/
+   font-size: small;
 }
 
 #mobile-nav {
@@ -53,6 +54,11 @@ nav > a:last-child {
 article {
     padding-left: 5vw;
     padding-right: 5vw;
+    font-size: 1rem;
+}
+
+figcaption {
+    font-size: 1rem;
 }
 
 .vertical-container {
@@ -64,4 +70,49 @@ article {
 
 .tagline {
     white-space: nowrap;
+}
+
+#bonus {
+    display: block;
+    margin-top: 3em;
+}
+
+.stage .cube {
+    width: 60vw;
+    height: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photobox {
+    flex-direction: column;
+}
+
+.photobox img {
+    height: 60vw;
+    left: 50%;
+}
+
+.stage .font {
+    transform: translateX(-50%) rotateZ(30vw);
+}
+
+.stage .back {
+    transform: translateX(-50%) rotateY(180deg) translateZ(30vw);
+}
+
+.stage .top {
+    transform: translateX(-50%) rotateX(90deg) translateZ(30vw);
+}
+
+.stage .bottom {
+    transform: translateX(-50%) rotateX(-90deg) translateZ(30vw);
+}
+
+.stage .left {
+    transform: translateX(-50%) rotateY(-90deg) translateZ(30vw);
+}
+
+.stage .right {
+    transform: translateX(-50%) rotateY(90deg) translateZ(30vw);
 }
