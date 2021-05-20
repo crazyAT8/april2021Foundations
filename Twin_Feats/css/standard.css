@@ -178,7 +178,7 @@ article::before {
 }
 
 #apps > .contact {
-    grid-area: header;  /* this should be main */
+    grid-area: main;  /* this should be main */
 }
 
 #apps > div:nth-last-of-type(1) {
