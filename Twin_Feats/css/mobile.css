@@ -17,6 +17,7 @@ html {
 
 #mobile-nav > img {
     width: 100%;
+    height: 100%;
 }
 
 #nav:target {
@@ -28,7 +29,7 @@ html {
 nav {
     flex-direction: column;
     top: calc(5vh + .5em);
-    max-width: 0;
+    width: 0;
     overflow: hidden;
     transition: all .5s;
 }
@@ -55,10 +56,15 @@ article {
     padding-left: 5vw;
     padding-right: 5vw;
     font-size: 1rem;
+    padding-top: 5vw;
+    height: auto;
+    min-height: 100vh;
+    position: absolute;
 }
 
 figcaption {
     font-size: 1rem;
+    margin-bottom: 1em;
 }
 
 .vertical-container {
@@ -82,14 +88,21 @@ figcaption {
     height: 60vw;
     margin-left: auto;
     margin-right: auto;
+    animation-delay: 3s;
+}
+
+.stage {
+    width: 100%;
 }
 
 .photobox {
     flex-direction: column;
+    padding-bottom: 1em;
 }
 
 .photobox img {
     height: 60vw;
+    width: 60vw;
     left: 50%;
 }
 
@@ -115,4 +128,14 @@ figcaption {
 
 .stage .right {
     transform: translateX(-50%) rotateY(90deg) translateZ(30vw);
+}
+
+#about:target .cube {
+    animation-play-state: running;
+}
+
+.bonus-img {
+    margin-top: 5vh;
+    display: block;
+    width: 100%;
 }

@@ -244,7 +244,7 @@ article::before {
 }
 
 .stage {
-    perspective: 1600px;
+    /*perspective: 1600px;*/
     perspective-origin: 50% 0;
     width: 22ch;
     margin-right: 1.5em;
@@ -328,11 +328,7 @@ article::before {
     }
 }
 
-#mobile-nav, #mobile-trigger {
-    display: none;
-}
-
-#mobile-nav, #mobile-trigger, #bonus {
+#mobile-nav, #mobile-trigger, #bonus, .bonus-img {
     display: none;
 }
 
