@@ -55,8 +55,8 @@ nav > a:hover {
 }
 
 .logo {
-    height: 40vh;   /* Why did you change this to 40vh??? */
-    /*width: 9ch;*/
+    /*height: 40vh;*/   
+    width: 9ch;
 }
 
 .title, .logo {
@@ -72,7 +72,7 @@ nav > a:hover {
 .photobox {
     display: flex;
     /*flex-direction: row;*/
-    /*margin-top: 1em;*/
+    margin-top: 1em;
 }
 
 .photobox img {
@@ -81,7 +81,7 @@ nav > a:hover {
 }
 
 .photobox figure {
-    /*font-size: .6em;*/
+    font-size: .6em;
     margin: 0;
     margin-top: .3rem;
     margin-right: 1em;
@@ -160,7 +160,7 @@ article::before {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    opacity: 0.2;
+    opacity: 0.1;
     z-index: -1;
 }
 
@@ -178,7 +178,7 @@ article::before {
 }
 
 #apps > .contact {
-    grid-area: main;  /* this should be main */
+    grid-area: main;  
 }
 
 #apps > div:nth-last-of-type(1) {
@@ -228,6 +228,10 @@ article::before {
     margin-left: auto;
     margin-right: auto;
     text-align: left;
+    position: absolute;
+    left: 50%;
+    top: calc(10vh + 3.5rem);
+    transform: translateX(-50%);
 }
 
 #contact a {
@@ -248,8 +252,8 @@ article::before {
     perspective-origin: 50% 0;
     width: 22ch;
     margin-right: 1.5em;
-    font-size: .6em;
-    margin-bottom: 2em;
+    /*font-size: .6em;*/
+    /*margin-bottom: 2em;*/
 }
 
 .stage .cube {
@@ -274,7 +278,7 @@ article::before {
     animation-play-state: running !important;
 }
 
-.stage .font {
+.stage .front {
     transform: translateZ(11ch);
 }
 
@@ -362,15 +366,15 @@ article::before {
     margin-bottom: 1em;
 }*/
 
-/*figcaption {
+figcaption {
     margin-top: 1.5em;
     font-size: 0.5rem;
     text-align: center;
-}*/
+}
 
-/*h2 {
+h2 {
    font-size: 1.25em; 
-}*/
+}
 
 /*.paragraph_left {
     text-align: left;
