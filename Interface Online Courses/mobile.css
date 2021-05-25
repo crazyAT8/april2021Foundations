@@ -1,0 +1,78 @@
+/*======================================
+Nav Menu
+========================================*/
+
+#mobile-menu {
+    display: block;
+    position: fixed;
+    right: 2vw;
+    top: 0;
+    font-size: 4rem;
+    color: white;
+    z-index: 2;
+}
+
+/*#mobile-menu:target ~ nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+}*/
+
+#mobile-trigger:checked ~ nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+}
+
+nav {
+    display: none;        /*hides the menu until icon is clicked*/
+    right: 2vw;
+    top: 4rem;
+    font-size: 3em;
+    align-items: center;
+}
+/*provides extra padding around the a tags to ensure better selection with fingers*/
+nav > a {
+    border: 0;            /*this turns off the vertical bar separators used on desktop*/
+    padding: .5em;
+}
+
+nav > div {               /*selects the a social media icons in the nav menu*/
+    margin-top: 1em;      /*gives some extra seperation from the column links*/
+}
+
+/*======================================
+Header
+========================================*/
+
+header {                  /*this gets rid of the gap at the top of the modile site bc it has no nav bar at the top*/
+    margin-top: 0;
+}
+
+/*======================================
+White Box Slides
+========================================*/
+
+/*need to narrow the padding, widen the content boxes, and switch to a column layout*/
+
+#intro, .boxes {                    /*for the home page and the courses page*/
+    flex-direction: column;
+    min-height: 50vh;               /*for taller screens, this ensures that justify-content: space-between set for the flexbox will space out the content boxes if there is extra room*/
+    box-sizing: border-box;
+}
+
+.side1, .side2 {
+    min-width: 80vw;
+    max-width: 80vw;
+    margin-bottom: 2em;             /*adds separation btw these content boxes if there isn't any leftover space for the justify-content to divy up btw them*/
+}
+
+/*======================================
+FAQ
+========================================*/
+
+.box {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin: 0;
+}

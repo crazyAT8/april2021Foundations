@@ -1,0 +1,288 @@
+/*======================================
+General
+========================================*/
+
+html {
+    font-family: Quicksand, sans-serif;
+    font-size: large;
+}
+
+body {
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/*======================================
+Nav Menu- Home page
+========================================*/
+
+#mobile-menu, #mobile-trigger {
+    display: none;                 /*so the hamburger menu doesn't show on the desktop*/
+}
+
+nav {
+    background: #000060;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+nav a {                             /*selects all the a tags of the nav section*/
+    text-decoration: none;          /*gets rid of the underline on the tags*/
+    padding-left: 1em;
+    padding-right: 1em;
+    border-left: 1px solid gray;  /*this puts a vertical line between each a tag*/
+    text-align: center;
+    color: #6060ff;
+    transition: color .5s;
+}
+
+nav > a:first-child {               /*selects the vary first a tag of the nav section*/
+    border-left: 0;                 /*this gets rid of the vertical line of the first a tag, bc there is no tag to its left*/
+}
+
+nav a:hover {                       /*selects a tags in the nav section to change when hovered over*/
+    color: white;
+    text-shadow: 1px 1px 2px #808080;
+}
+
+/*======================================
+Masthead or Header- Home page
+========================================*/
+
+header {
+    position: relative;             /*this is so that we can position the slideshow absolutely within this header*/
+    margin-top: 3em;                /*the padding of the nav bar is 1em, so the height of the nav bar is 3em (padding-top and bottom and the content)*/
+    height: 50vh;                   /*note: the content is actually slightly taller than the font-size(1em) by default, so there will be just a bit of overlap btw the nav and the header*/
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+/*======================================
+Headings- Home page
+========================================*/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Quicksand, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+/*======================================
+Slideshow- Home page
+========================================*/
+
+.slideshow-images {
+    position: absolute;             /*places the slideshow container within the header at it's top-left corner*/
+    left: 0;
+    top: 0;
+    width: 100%;                    /*size the slidewho container to be the entire width and height of it's parent header*/
+    height: 100%;
+    z-index: -1;                    /*this puts the slideshow behind the other content within the header*/
+    background-color: black;      /*this sets a dark background for the delay btw rotating images*/
+}
+
+.slideshow-images::after {          /*this is setting the semi-transparent blue overlay that dims the slideshow, providing contrast for the heading*/
+    content: "";
+    position: absolute;             /*positions this pseudo-element within the parent slideshow div, at the top left corner*/
+    left: 0;
+    top: 0;
+    width: 100%;                    /*sizes this pseudo-element to be the entire width and height of it's parent, the slideshow div*/
+    height: 100%;
+    background-color: #000050;
+    opacity: 0.8;
+}
+
+.slideshow-images > img {
+    position: absolute;             /*position the images and size them to match their parent's size*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;                     /*by default, the images are not visible, so their opacity is set to 0*/
+    object-fit: cover;              /*this will zoom in on the image in whatever manner is needed so that it fills the available space*/
+    animation: slideshow 36s linear infinite;   /*the name in the keyframes will be slideshow*/
+    /*each image takes 36 seconds btw it's turn to be displayed, this is broken down into half-second fade in/out and 5 second display for a total of 6 seconds, and there are 6 images*/
+}
+
+/*each image must wait for it's turn to be displayed by the same animation (named slideshow above).
+    this means each image has to simply have an increasing animation-delay before it has it's turn*/
+
+.slideshow-images img:nth-child(2) {
+    animation-delay: 6s;
+}
+
+.slideshow-images img:nth-child(3) {
+    animation-delay: 12s;
+}
+
+.slideshow-images img:nth-child(4) {
+    animation-delay: 18s;
+}
+
+.slideshow-images img:nth-child(5) {
+    animation-delay: 24s;
+}
+
+.slideshow-images img:nth-child6() {
+    animation-delay: 30s;
+}
+
+/*not there is no selector for the first image, since it will begin it's animation immediately.
+    Since each image is displayed for 5 seconds with a half-second fade in and a half-second fade out,
+        each image is delayed by 6 seconds from the previous image before it is then displayed by the animation.*/
+
+@keyframes slideshow {
+    0% {opacity: 0;}
+    1.38% {opacity: 1;}         /*represents the half sec fade in delay (.5s/36s=1.38% of 36 sec)*/
+    15.27% {opacity: 1;}        /*represents the 5s display time and the half second delay (5.5s/36s=15.27% of 36 sec)*/ 
+    16.65% {opacity: 0;}        /*represents the half sec fade out (1.38%+15.27%=16.65% or 6s of 36 sec)*/
+    100% {opacity: 0;}          /*represents the 30s of waiting until it comes backup again*/
+}
+
+/*since this animation is used by each image, the total run time for the animation is 36 sec,
+    but only 6 sec of that is for a given image, and the remaining 30 sec is just waiting for the other images to show*/
+
+header > .content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+/*======================================
+White Box Slides- Home page
+========================================*/
+
+h3 {
+    font-size: 2rem;
+    margin-top: .7rem;
+    margin-bottom: .7rem;
+}
+
+article {
+    position: relative;
+    padding-top: 3em;
+}
+
+article::before {
+    content: "";
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: .1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#intro, .boxes {                        /*for the home page and the courses page*/
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    font-size: 1.2rem;
+    display: flex;                      /*flex-direction by default forms a row*/
+    justify-content: space-around;
+    align-items: stretch;               /*stretches the boxes to fill the cross-axis(vertical) space so that both content boxes are the same height*/
+}
+
+.side1, .side2 {
+    background-color: white;
+    box-sizing: border-box;             /*so the padding does not add to the size*/
+    min-width: 35%;                     /*by setting the min and max width we basically trick the flexbox into letting us control the size-35% of the parent tag*/
+    max-width: 35%;
+    font-size: .8em;
+    padding: 1em;
+}
+
+.icon {
+    height: 1.5em;
+}
+
+#intro::before {
+    background-image: url("images/coding.jpg");
+}
+
+/*======================================
+Courses
+========================================*/
+
+article > h2 {
+    background-color: #000060;
+    color: white;
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+footer {
+    background-color: transparent;              /*the footer properties reset the inherited background-color to be transparent*/
+    padding: 1em;
+    margin: 1em 10vw .5em 10vw;
+    font-size: 5.8em;
+}
+
+#courses::before {
+    background-image: url("images/computer-class.jpg");
+    background-position: center top;
+}
+
+/*======================================
+Courses
+========================================*/
+
+#about::before {
+    background-image: url("images/kent-teaching.jpg");
+    background-position: center top;
+}
+
+/*======================================
+FAQ
+========================================*/
+
+/*since the parent of box (boxes) is already a flexbox, the box is the only child and will fill the width.
+    We'll need to add some extra padding for this box since it will be so wide,
+        along with a bit of margin*/
+
+.box {                                      
+    padding-left: 10vw;
+    padding-right: 10vw;
+    margin-left: 7vw;
+    margin-right: 7vw;
+    background-color: white;
+}
+
+/*we also want a bit of separation btw each FAQ (<dt><dd> pair)*/
+
+dt {
+    font-weight: bold;
+}
+
+
+dd {
+    margin-bottom: 1em;
+}
