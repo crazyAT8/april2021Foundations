@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $("#clicker").click(buttonClicked);     //The $ is the jQuery $ function, which is selecting an HTML tag to act upon
+                                                    //(“#clicker”) is the HTML tag to be acted on, i.e. the HTML tag with an id of clicker. This is the <button> tag.
+                                                    //Following $(“#clicker”) is how we want to interact with #clicker. In this case we want to know when the user clicks on it: $(“#clicker”).click
+                                                    //click is a function, so it has an argument, which is the name of the function to execute when the user clicks on #clicker (buttonClicked)
+                                                    
+            function buttonClicked() {                                  //This function uses the jQuery $ function to find the <body> tag, and then appends some HTML and text to the bottom of it        
+                $("body").append("<p>Button was clicked!</p>");         
+            }
+        });
+    </script>
+</head>
+<body>
+    <button id="clicker">Click Me</button>
+</body>
+</html>
