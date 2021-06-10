@@ -10,6 +10,7 @@ body {
     height: 100vh;
     background-position: center;
     background-attachment: fixed;
+    margin: 0;                          /*kills the scroll bar*/
 }
 
 header {
@@ -41,6 +42,14 @@ nav > a {
     vertical-align: middle;
 }
 
+nav > a > span {
+    margin-left: 10px;
+}
+
+/*this is for seperating the icons from the words*/
+article > button > i {
+    margin-left: 10px;
+}
 nav > a:hover {
     color: rgb(245, 40, 177);
 }
