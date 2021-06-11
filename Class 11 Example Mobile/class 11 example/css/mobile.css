@@ -5,7 +5,9 @@
         font-size: 1vh;
     }
 
-    header {
+  
+
+    nav {
         flex-direction: column;
         display: none;
         left: 2vh;
@@ -14,13 +16,27 @@
         align-items: center;
     }
 
+    header > span {
+        display: block;
+    }
+
     #menu {
         display: block;
+    }
+
+    .menu-show {
+        display: flex;
+    }
+
+    main {
+        white-space: unset
     }
 
     main a {
         background: linear-gradient(90deg, blue, lightblue, turquoise);
         display: block;
+        margin: 20px;
+        margin-left: 125px;
     }
 
 
