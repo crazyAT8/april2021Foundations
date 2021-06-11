@@ -1,0 +1,30 @@
+
+
+@media screen and (hover:none) and (orientation: portrait) {
+    html, body {
+        font-size: 1vh;
+    }
+
+    header {
+        flex-direction: column;
+        display: none;
+        left: 2vh;
+        top: calc(2vh + 1em);
+        width: 12ch;
+        align-items: center;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    main a {
+        background: linear-gradient(90deg, blue, lightblue, turquoise);
+        display: block;
+    }
+
+
+    .teaser {
+        flex-direction: column;
+    }
+}
