@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array Practice</title>
+    <script>
+
+        //two different ways to declare (create) an array in javascript 
+
+        // Way number 1
+            //using the constructor syntax
+        var array1 = new Array();
+
+        // Way number 2
+            // to declare a javascript array using standard syntax (most popular)
+        var array2 = [];
+
+        var fruits = ["apples", "oranges", "peaches"];
+        alert(fruits);  // "alert" is a pop up window
+
+        /*console.log(fruits[0])*/array1
+
+        for(var i = 0; i < fruits.length; i++){
+            console.log("fruit " + i + " = " + fruits[i]);
+        }
+        
+        fruits[2] = "plums";
+        console.log(fruits);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

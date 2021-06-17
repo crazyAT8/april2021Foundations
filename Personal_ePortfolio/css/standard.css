@@ -8,7 +8,7 @@
 
 :root {
     font-size: 16px;
-    font-family: "Open Sans";
+    /*font-family: "Open Sans";*/
     --text-primary: #b6b6b6;        /*these are css variables. they start with the double hyphen*/
     --text-secondary: #ececec;      
     --bg-primary: #23232e;
@@ -17,7 +17,7 @@
 
 body {
     color: black;
-    background-color: white;
+   /* background-color: white;*/
     margin: 0;
     padding: 0;
 }
@@ -31,6 +31,7 @@ main {
     width: 5rem;        /*notice that it matches the margin0left in the main tag*/
     height: 100vh;
     position: fixed;
+    z-index: 20;
     background-color: var(--bg-primary);  /*this is how out color variables in the pseudo root element is called upon to be used*/
     transition: width 200ms ease;         /*this is the animation for the navbar to expand with grace*/
 }
@@ -50,6 +51,7 @@ main {
     height: 5rem;
     color: var(--text-primary);
     text-decoration: none;
+    font-family: 'Fredoka One', cursive;
 }
 
 .nav-link:hover {
@@ -59,6 +61,7 @@ main {
 .link-text {                /*for all the span tags not to show unless the user hovers over*/
     display: none;
     margin-left: 1rem;
+    font-family: 'Fredoka One', cursive;
 }
 
 .nav-link i {               /*for all the icon logo tags*/
@@ -75,10 +78,86 @@ main {
 }
 
 /*====================================
+            Footer
+======================================*/
+.line {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    background: rgb(100, 165, 218);
+}
+
+.line-1 {
+    z-index: 15;
+    opacity: 0.5;
+}
+.line-2 {
+    z-index: 10;
+    opacity: 0.7;
+}
+.line-3 {
+    z-index: 5;
+}
+
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+
+.wave1 {
+    /*-webkit-background-size: 50% 80px;*/
+    /*background-size: 10% 20%;*/
+    animation: animate 5s linear infinite;
+}
+
+.wave2 {
+   /* -webkit-background-size: 50% 100px;*/
+    /*background-size: 20% 50%;*/
+    animation: animate 12s linear infinite;
+}
+
+.wave3 {
+   /* -webkit-background-size: 50% 80px;*/
+   /* background-size: 10% 20%;*/
+    animation: animate 18s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1);
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.5);
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1);
+    }
+}
+
+/*====================================
             Home Page
 ======================================*/
+.mid-text {
+    position: absolute;
+    z-index: 50;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
 
-/*background image no.1 psuedo-element before*/
+.mid-text h1 {
+    color: ;
+    font-family: ;
+    font-size: 50px;
+}
+
 
 /*====================================
             About Page
