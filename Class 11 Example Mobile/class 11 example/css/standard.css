@@ -24,7 +24,10 @@ header {
     justify-content: space-between;
 }
 
-header > span {
+#title {
+    position: absolute;
+    top: 0;
+    left: 0;
     margin-left: 3vw;
     font-size: 2em;
     line-height: 5rem;
@@ -53,8 +56,14 @@ main {
     left: 50%;
     top: 50%;
     transform: translate(-50%, calc(-50% + 2em));
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     text-align: center;
+}
+
+main > h1 {
+    width: 35ch;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 main a {

@@ -2,9 +2,10 @@
             General
 ======================================*/
 
-/*====================================
-            Nav Bar
-======================================*/
+/*main {
+    position: absolute;
+    z-index: 75;
+}*/
 
 :root {
     font-size: 16px;
@@ -22,16 +23,27 @@ body {
     padding: 0;
 }
 
-main {
-    margin-left: 5rem;
-    padding: 1rem;
+.pgTitle {
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    left: 43%;
+    color: white;
+    font-size: 50px;
+    font-family: "Alfa Slab One", cursive;
+    letter-spacing: 5px;
 }
+/*====================================
+            Nav Bar
+======================================*/
+
+
 
 .navbar {
     width: 5rem;        /*notice that it matches the margin0left in the main tag*/
     height: 100vh;
     position: fixed;
-    z-index: 20;
+    z-index: 99;
     background-color: var(--bg-primary);  /*this is how out color variables in the pseudo root element is called upon to be used*/
     transition: width 200ms ease;         /*this is the animation for the navbar to expand with grace*/
 }
@@ -51,7 +63,7 @@ main {
     height: 5rem;
     color: var(--text-primary);
     text-decoration: none;
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .nav-link:hover {
@@ -61,7 +73,7 @@ main {
 .link-text {                /*for all the span tags not to show unless the user hovers over*/
     display: none;
     margin-left: 1rem;
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .nav-link i {               /*for all the icon logo tags*/
@@ -78,7 +90,7 @@ main {
 }
 
 /*====================================
-            Footer
+            Footer(for every page)
 ======================================*/
 .line {
     position: absolute;
@@ -140,22 +152,88 @@ main {
     }
 }
 
-/*====================================
-            Home Page
-======================================*/
+/*===============================================================================================================
+                                                     Home Page
+===============================================================================================================*/
 .mid-text {
     position: absolute;
     z-index: 50;
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
 }
 
 .mid-text h1 {
-    color: ;
+    color: white;
     font-family: ;
     font-size: 50px;
+    text-align: center;
+    z-index: 50;
+}
+/*====================================
+            Text Typing Animation
+======================================*/
+#typing-animation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*min-height: 100vh;*/
+}
+
+.wrapper {
+    display: inline-flex;
+}
+
+.wrapper .static-txt {
+    color: white;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.wrapper .dynamic-txts {
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.dynamic-txts li {
+    color: #FC6D6D;
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 5s steps(5) infinite;      /*steps are the number of list items in this case*/
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+.dynamic-txts li span {
+    position: relative;
+    text-align: left;
+}
+
+.dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(100, 165, 218);
+    border-left: 2px solid #FC6D6D;
+    animation: typing .5s steps(14) infinite;      /*steps are the word or phrase with the most characters*/
+}
+
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
 }
 
 
@@ -181,4 +259,56 @@ main {
             Contact Page
 ======================================*/
 
-/*background image no.5 psuedo-element before*/
+#contact {
+    position: absolute;
+    z-index: 75;
+    display: grid;
+    height: 80%;
+    width: 100%;
+    place-items: center;
+}
+
+.wrapper .button {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    float: left;
+    margin: 25px 15px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+}
+
+.wrapper .button:hover {
+    width: 225px;
+}
+
+.wrapper .button .icon {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 50px;
+    margin-top: 20px;
+    color: var(--bg-primary);
+}
+
+.wrapper .button .icon i {
+    font-size: 25px;
+    line-height: 60px;
+}
+
+.wrapper .button span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+    font-family: "Source Code Pro", monospace;
+    color: var(--bg-primary);
+    font-weight: 400;
+}

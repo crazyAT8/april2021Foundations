@@ -9,11 +9,16 @@
 
     nav {
         flex-direction: column;
-        display: none;
-        left: 2vh;
-        top: calc(2vh + 1em);
-        width: 12ch;
+        /*display: none;*/
+        position: fixed;
+        right: 0.5em;
+        top: 1.5em;
+        width: 0;
+        height: 0;
+        overflow: hidden;
         align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        transition-duration: 0.25s;
     }
 
     header > span {
@@ -22,6 +27,9 @@
 
     #menu {
         display: block;
+        position: fixed;
+        top: 0.5em;
+        right: 0.5em;
     }
 
     .menu-show {
