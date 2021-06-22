@@ -23,6 +23,8 @@ body {
     padding: 0;
 }
 
+
+
 .pgTitle {
     position: absolute;
     z-index: 50;
@@ -30,7 +32,7 @@ body {
     left: 43%;
     color: white;
     font-size: 50px;
-    font-family: "Alfa Slab One", cursive;
+    font-family: "Red Hat Display", sans-serif;
     letter-spacing: 5px;
 }
 /*====================================
@@ -45,7 +47,7 @@ body {
     position: fixed;
     z-index: 99;
     background-color: var(--bg-primary);  /*this is how out color variables in the pseudo root element is called upon to be used*/
-    transition: width 200ms ease;         /*this is the animation for the navbar to expand with grace*/
+    transition: width 400ms ease;         /*this is the animation for the navbar to expand with grace*/
 }
 
 .navbar-nav {
@@ -89,15 +91,16 @@ body {
     display: block;
 }
 
-/*====================================
-            Footer(for every page)
-======================================*/
+/*===============================================================================================================
+                                            Footer(for every page)
+================================================================================================================*/
 .line {
     position: absolute;
     width: 100%;
     overflow: hidden;
     height: 100%;
-    background: rgb(100, 165, 218);
+    background: rgb(122, 153, 179);
+    background-image: linear-gradient(to bottom right, rgb(110, 174, 233), rgb(25, 57, 94));
 }
 
 .line-1 {
@@ -170,90 +173,158 @@ body {
     text-align: center;
     z-index: 50;
 }
-/*====================================
-            Text Typing Animation
-======================================*/
-#typing-animation{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*min-height: 100vh;*/
+
+.mid-text h1::first-letter {
+    font-size: 60px;
 }
 
-.wrapper {
-    display: inline-flex;
-}
-
-.wrapper .static-txt {
+.mid-text {
     color: white;
-    font-size: 60px;
-    font-weight: 400;
+    font-family: ;
+    font-size: 30px;
+    text-align: center;
 }
 
-.wrapper .dynamic-txts {
-    margin-left: 15px;
-    height: 90px;
-    line-height: 90px;
-    overflow: hidden;
-}
 
-.dynamic-txts li {
-    color: #FC6D6D;
-    list-style: none;
-    font-size: 60px;
-    font-weight: 500;
-    position: relative;
-    top: 0;
-    animation: slide 5s steps(5) infinite;      /*steps are the number of list items in this case*/
-}
 
-@keyframes slide {
-    100% {
-        top: -360px;
-    }
-}
+/*=================================================================================================================
+                                                About Page
+=================================================================================================================*/
 
-.dynamic-txts li span {
-    position: relative;
-    text-align: left;
-}
-
-.dynamic-txts li span::after {
-    content: "";
+.about-middle-container {
     position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgb(100, 165, 218);
-    border-left: 2px solid #FC6D6D;
-    animation: typing .5s steps(14) infinite;      /*steps are the word or phrase with the most characters*/
+    z-index: 75;
+    width: 25%;
+    height: 60%;
+    top: 15%;
+    left: 35%;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 10px;
+    color: var(--bg-primary);
+    font-size: large;
+    font-family: "Source Code Pro", monospace;
 }
 
-@keyframes typing {
-    100% {
-        left: 100%;
-        margin: 0 -35px 0 35px;
-    }
+.about-middle-container > img {
+    float: left;
+    height: 25%;
+    margin-right: 50px;
+    border-radius: 30px;
 }
 
+#name_title {
+    margin-left: 25px;
+}
 
-/*====================================
-            About Page
-======================================*/
+#name_title > h3 {
+    font-size: 2em;
+}
 
-/*background image no.2 psuedo-element before*/
+#name_title > h5 {
+    font-size: 20px;
+}
 
-/*====================================
-            Skills Page
-======================================*/
+#resume, #references {
+    border-style: none;
+    border-radius: 30px;
+    height: 30px;
+    width: 100px;
+    margin: 65px;
+    color: var(--bg-primary);
+    font-family: "Source Code Pro", monospace;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
 
-/*background image no.3 psuedo-element before*/
+#jq_get1 {
+    display: none;
+}
+
+#jq_get2 {
+    display: none;
+}
+
+/*=================================================================================================================
+                                                     Skills Page
+=================================================================================================================*/
+
+#skills-list {
+    position: absolute;
+    top: 7%;
+    left: 38%;
+    z-index: 50;
+    list-style: none;
+}
+
+#skills-list li {
+    font-size: xx-large;
+    margin-top: 20px;
+    padding: 10px 50px;
+    color: var(--bg-primary);
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 30px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+#skills-list li i {
+    margin-right: 5px;
+}
 
 /*====================================
             Projects Page
 ======================================*/
 
-/*background image no.4 psuedo-element before*/
+.link {
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 30px;
+    height: 50px;
+    width: 175px;
+    padding-left: 5px;
+    margin: 20px;
+    margin-left: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.7s ease-out;
+    z-index: 75;
+    background-color: white;
+    color: var(--bg-primary);
+    font-family: 'Source Code Pro', monospace;
+    text-decoration: none;
+  }
+  
+  .link > h6 {
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+  
+  .link:hover {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    z-index: 100;
+  }
+  
+  #links-container {
+    display: flex;
+    z-index: 75;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    height: 50%;
+    width: 60%;
+  }
+  
+  #container {
+    position: absolute;
+    z-index: 75;
+    top: 20%;
+    left: 32%;
+  }
 
 /*====================================
             Contact Page
@@ -278,7 +349,7 @@ body {
     background: #fff;
     border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-out;
 }
 
