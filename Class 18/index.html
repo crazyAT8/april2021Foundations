@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/standards.css">
     <link rel="stylesheet" href="css/mobile.css">
+    <script src="https://kit.fontawesome.com/360d7c3dec.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <article id="home">
@@ -24,18 +25,52 @@
             </div>
         </section>
         <nav class="bottom_right">
-            <a href="">
-                <h3 id="homeBR">Home</h3>
-            </a>
-            <a href="">
-                <h3 id="aboutBR">About</h3>
-            </a>
-            <a href="">
-                <h3 id="schedule">Schedule</h3>
-            </a>
-            <a href="">
-                <h3 id="contact">Contact</h3>
-            </a>
+            <div>
+                <a href="#home">
+                    <h3 id="homeBR">Home</h3>
+                </a>
+            </div>
+            <div>
+                <a href="#about">
+                    <h3 id="aboutBR">About</h3>
+                </a>
+            </div>
+            <div>
+                <a href="">
+                    <h3 id="schedule">Schedule</h3>
+                </a>
+                <div class="schedule_modal" id="schedule_modal">
+                    <table id="schedule_modal_table">
+                        <tr>
+                            <td>Silly Kitty</td>
+                            <td>The first episode in which we meet a very silly kitty.</td>
+                            <td>07/05/2016</td>
+                        </tr>
+                        <tr>
+                            <td>Trouble in Orange</td>
+                            <td>Silly kitty gets lost and spends the night in kitty lockup.</td>
+                            <td>07/12/2016</td>
+                        </tr>
+                        <tr>
+                            <td>Claws of Fury</td>
+                            <td>Ninja cat attacts the home and silly kitty must defend his family!</td>
+                            <td>07/19/2016</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <a href="">
+                    <h3 id="contact">Contact</h3>
+                </a>
+                <div class="contact_modal" id="contact_modal">
+                    <div class="contact_modal_body">
+                        (402)555-5555 
+                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-twitter-square"></i>
+                    </div>
+                </div>
+            </div>
         </nav>
     </article>
     <article id="about">
