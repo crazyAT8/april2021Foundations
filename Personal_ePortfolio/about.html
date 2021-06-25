@@ -57,7 +57,7 @@
 
     <main>
         <header>
-            <h2 class="pgTitle">About</h2>
+            <h2 id="about">About</h2>
         </header>
             <section>
                 <div class="about-middle-container">
@@ -76,31 +76,75 @@
                         I'm a problem solver, work well with others, and have a 
                         keen eye for detail. 
                     </p>
-                    <button id="resume">Resume</button>
-                    <div id="jq_get1">
-                        Name: William Watson <br>
-                        Location: Omaha, NE <br>
-                        Coding Languages: HTML, CSS, SASS, JavaScript, jQuery, <br> 
-                        Node.js, Python, Git, and GitHube <br>
-                        Years of Experience: 1 <br>
-                        Education: Aim Institute 
+                    <button data-modal-target="#resumeModal" id="resume">Resume</button>
+                    <div class="resumeModal" id="resumeModal">
+                        <div class="modal-header">
+                            <div class="title">Resume</div>
+                            <button data-close-button class="close-button">&times;</button>
+                        </div>
+                        <div class="resume-body">
+                            <ul>
+                                <li>Name: William Watson</li>
+                                <li>Location: Omaha, NE</li>
+                                <li>Coding Languages:
+                                    <ul>
+                                        <li>HTML</li>
+                                        <li>CSS</li>
+                                        <li>SASS</li>
+                                        <li>JavaScripy</li>
+                                        <li>jQuery</li>
+                                        <li>Node.js</li>
+                                        <li>Python</li>
+                                        <li>Git</li>
+                                        <li>GitHube</li>
+                                    </ul>
+                                </li>
+                                <li>Years of Experience: 1 </li>
+                                <li>Education: Aim Institute</li>
+                            </ul>
+                        </div>
                     </div>
-                    <button id="references">References</button>
-                    <div id="jq_get2">
-                        Name:   <br>
-                        Title:  <br>
-                        Relationship:   <br>
-                        Contact Info:   <br>
-                        <br>
-                        Name:   <br>
-                        Title:  <br>
-                        Relationship:   <br>
-                        Contact Info:   <br>
-                        <br>
-                        Name:   <br>
-                        Title:  <br>
-                        Relationship:   <br>
-                        Contact Info:   <br>
+                    <button data-modal-target="#referencesModal" id="references">References</button>
+                    <div class="referencesModal" id="referencesModal">
+                        <div class="modal-header">
+                            <div class="title">References</div>
+                            <button data-close-button class="close-button">&times;</button>
+                        </div>
+                        <div class="references-body">
+                            <ul>Reference No.1
+                                <li>Name: Eric Larson</li>
+                                <li>Title: Director of Interactive Technology</li>
+                                <li>Relationship: Former Co-worker</li>
+                                <li>Contact Info:
+                                    <ul>
+                                        <li>email: Eplarsen@cox.net</li>
+                                        <li>phone: (402)216-8813</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul>Reference No.2
+                                <li>Name: Chris Schaben</li>
+                                <li>Title: Head Of Science Department for OPS</li>
+                                <li>Relationship: Employer</li>
+                                <li>Contact Info:
+                                    <ul>
+                                        <li>email: cschaben@gmail.com</li>
+                                        <li>phone: (402)557-2450</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul>Reference No.3
+                                <li>Name: Kit Shelden</li>
+                                <li>Title: Director of operations for TTN</li>
+                                <li>Relationship: former co-worker</li>
+                                <li>Contact Info:
+                                    <ul>
+                                        <li>email: kshelton@gmail.com</li>
+                                        <li>phone: (402)665-1514</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>

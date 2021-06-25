@@ -125,19 +125,12 @@ html {
 #pawPrint {
     position: absolute;
     bottom: 30px;
-    right: 0;
-    display: none;
-    animation: paw-move 1s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes paw-move {
-    from {right: 0px}
-    to {right: 100px}
+    right: -10%;
+    /*transition: left 0.3s ease-in-out;*/
 }
 
 #homeBR {transition: all 0.3s ease-out;}            /*740px*/
-#homeBR:hover {transform: translateY(-25px);}
+#pawPrint, #homeBR:hover {transform: translateY(-25px);}
 
 #aboutBR {transition: all 0.3s ease-out;}           /*550px*/
 #aboutBR:hover {transform: translateY(-25px);}
@@ -210,23 +203,34 @@ html {
 .contact_modal {
     position: fixed;
     top: 50%;
-    left: 50%;
-    transform: rotateZ(360deg) translate(-50%, -50%) scale(0); /*zero scale makes it invisible*/
+    left: -50%;                                 /*this takes it out of view*/
+    transform: translate(-50%, -50%);        /*scale(0)zero scale makes it invisible*/
     transition: 200ms ease-in-out;
+    /*animation: cartWheel 200ms ease forwards;*/
     border: 1px solid orange;
     border-radius: 10px;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.8);
     color: orange;
-    width: 400px;
-    height: 100px;
+    width: 450px;
+    height: 150px;
     max-width: 80%;
 }
 
-
 .contact_modal.active {
-    transform: translate(-50%, -50%) scale(1); /*1 scale makes it visible*/
+    left: 50%;                                      /*this brings it back into view when clicked*/
+    /*transform: translate(-50%, -50%);*/    /*1 scale makes it visible*/
 }
+
+/*@keyframes cartWheel {
+    0% {
+        left: 0%;
+        transform: rotateZ(90deg);
+    }
+    100% {
+        left: 50%;  
+        transform: rotateZ(360deg);}
+}*/
 
 .contact_modal > button {
     background-color: rgba(0, 0, 0, 0.1);
@@ -243,17 +247,17 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 250px;
-    margin-left: 20px;
+    width: 350px;
+    margin-left: 15px;
 }
 
 .contact_tag:first-of-type {
     text-decoration: underline;
-    font-size: large;
+    font-size: 30px;
 }
 
-.contact_tag:nth-child(2) {
-    font-size: 50px;
+.fa-facebook-square, .fa-twitter-square {
+    font-size: 40px;
 }
 
 
@@ -274,6 +278,13 @@ html {
 .aboutPg_Extra > p{
     font-size: 2rem;
 }
+
+@media only screen and (min-height: 500px) {
+    .aboutPg_Extra > p {
+        text-shadow: 2px 2px white ;
+    }
+}
+
 
 /*===========================================================================================================
 
@@ -301,8 +312,6 @@ html {
         background-position: top center;
         background-attachment: fixed;
         position: fixed;
-        min-height: 50%;
-        min-width: 50%;
         top: 0;
         left: 0;
         margin: 0;
