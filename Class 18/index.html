@@ -36,11 +36,12 @@
                 </a>
             </div>
             <div>
-                <a href="">
+                <a data-modal-target="#modal">
                     <h3 id="schedule">Schedule</h3>
                 </a>
-                <div class="schedule_modal" id="schedule_modal">
-                    <table id="schedule_modal_table">
+                <div class="modal" id="modal">
+                    <button data-close-button class="close-button"><img src="images/images/close.png" alt=""></button>
+                    <table id="schedule_table">
                         <tr>
                             <td>Silly Kitty</td>
                             <td>The first episode in which we meet a very silly kitty.</td>
@@ -60,16 +61,20 @@
                 </div>
             </div>
             <div>
-                <a href="">
+                <a data-modal-target="#contact_modal">
                     <h3 id="contact">Contact</h3>
                 </a>
                 <div class="contact_modal" id="contact_modal">
+                    <button data-close-button class="close-button"><img src="images/images/close.png" alt=""></button>
                     <div class="contact_modal_body">
-                        (402)555-5555 
-                        <i class="fab fa-facebook-square"></i>
-                        <i class="fab fa-twitter-square"></i>
+                        <a class="contact_tag" href="">(402)555-5555</a> 
+                        <a class="contact_tag" href=""><i class="fab fa-facebook-square"></i></a>
+                        <a class="contact_tag" href=""><i class="fab fa-twitter-square"></i></a>
                     </div>
                 </div>
+            </div>
+            <div id="pawPrint">
+                <img src="images/images/pawprint.png" alt="">
             </div>
         </nav>
     </article>

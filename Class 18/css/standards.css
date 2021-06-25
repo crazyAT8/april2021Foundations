@@ -15,6 +15,7 @@ html {
   margin: 0;
   width: 100%;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 /*===========================================================================================================
@@ -98,7 +99,6 @@ html {
     margin-right: 10px;
     position: relative;
     transition: transform 3s;
-    
 }
 
 #desktop_netflix_logo:hover {
@@ -119,19 +119,37 @@ html {
     max-width: fit-content;
     bottom: 1%;
     right: 0;
+    cursor: pointer;
 }
 
-.bottom_right div {
-    transition: height 3s;
+#pawPrint {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    display: none;
+    animation: paw-move 1s;
+    animation-fill-mode: forwards;
 }
 
-.bottom_right div:hover {
-    height: 200px;
+@keyframes paw-move {
+    from {right: 0px}
+    to {right: 100px}
 }
+
+#homeBR {transition: all 0.3s ease-out;}            /*740px*/
+#homeBR:hover {transform: translateY(-25px);}
+
+#aboutBR {transition: all 0.3s ease-out;}           /*550px*/
+#aboutBR:hover {transform: translateY(-25px);}
+
+#schedule {transition: all 0.3s ease-out;}
+#schedule:hover {transform: translateY(-25px);}     /*350px*/
+
+#contact {transition: all 0.3s ease-out;}
+#contact:hover {transform: translateY(-25px);}      /*100px*/
 
 .bottom_right div a {
     text-decoration: none;
-    height: 150px;
     margin-right: 20px;
     margin-bottom: 20px;
     color: rgb(228, 148, 1);
@@ -154,22 +172,33 @@ html {
 
 =============================================================================================================*/
 
-.schedule_modal {
+.modal {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0); /*zero scale makes it invisible*/
-    transition: 200ms ease-in-out;
+    transition: transform 200ms;
     border: 1px solid orange;
     border-radius: 10px;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: orange;
     width: 500px;
-    max-width; 80%;
+    max-width: 80%;
 }
 
-.schedule_modal.active {
+.modal.active {
     transform: translate(-50%, -50%) scale(1); /*1 scale makes it visible*/
+}
+
+.modal > button {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    border-style: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(15px, -10px);
 }
 
 /*===========================================================================================================
@@ -182,18 +211,49 @@ html {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0); /*zero scale makes it invisible*/
+    transform: rotateZ(360deg) translate(-50%, -50%) scale(0); /*zero scale makes it invisible*/
     transition: 200ms ease-in-out;
     border: 1px solid orange;
     border-radius: 10px;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.1);
-    width: 500px;
-    max-width; 80%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: orange;
+    width: 400px;
+    height: 100px;
+    max-width: 80%;
 }
 
-.schedule_modal.active {
+
+.contact_modal.active {
     transform: translate(-50%, -50%) scale(1); /*1 scale makes it visible*/
+}
+
+.contact_modal > button {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    border-style: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(15px, -10px);
+}
+
+.contact_modal_body {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    margin-left: 20px;
+}
+
+.contact_tag:first-of-type {
+    text-decoration: underline;
+    font-size: large;
+}
+
+.contact_tag:nth-child(2) {
+    font-size: 50px;
 }
 
 
@@ -234,15 +294,15 @@ html {
                                 Background-Image
                     ======================================*/
     
-    body {
+    #home {
         background-image: url("../images/images/mobile-home.jpg");
         background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center center;
+        background-size: cover;
+        background-position: top center;
         background-attachment: fixed;
         position: fixed;
-        min-height: 100%;
-        min-width: 100%;
+        min-height: 50%;
+        min-width: 50%;
         top: 0;
         left: 0;
         margin: 0;
@@ -259,7 +319,6 @@ html {
         width: 100%;
         top: 0;
         left: 0;
-        z-index: 5;
     }
 
                     /*=====================================
@@ -269,21 +328,21 @@ html {
     .bottom_right {
         display: flex;
         position: fixed;
-        max-width: fit-content;
+        max-width: 400px;
         bottom: 5px;
         right: 0;
     }
 
-    .bottom_right a {
+    .bottom_right div a {
         height: 50px;
         margin-right: 0px;
         margin-bottom: 10px;
         color: rgb(228, 148, 1);
         display: inline-block;
-        font-size: 1em;
+        font-size: 1rem;
     }
 
-    .bottom_right a h3 {
+    .bottom_right div a h3 {
         font-size: 3em;
         margin-right: 10px;
         margin-bottom: 10px;
@@ -292,9 +351,18 @@ html {
         text-shadow: 1px 1px black ;   
     }
 
-    .bottom_right a:hover {
-        height: 0;
-    }
+    #homeBR {transition: all 0.3s ease-out;}            /*740px*/
+    #homeBR:hover {transform: translateY(-25px);}
+
+    #aboutBR {transition: all 0.3s ease-out;}           /*550px*/
+    #aboutBR:hover {transform: translateY(-25px);}
+
+    #schedule {transition: all 0.3s ease-out;}
+    #schedule:hover {transform: translateY(-25px);}     /*350px*/
+
+    #contact {transition: all 0.3s ease-out;}
+    #contact:hover {transform: translateY(-25px);}      /*100px*/
+
 
                     /*=====================================
                                 Title-top-left
