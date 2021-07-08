@@ -47,7 +47,7 @@ body {
     position: fixed;
     z-index: 99;
     background-color: var(--bg-primary);  /*this is how out color variables in the pseudo root element is called upon to be used*/
-    transition: width 400ms ease;         /*this is the animation for the navbar to expand with grace*/
+    transition: width 200ms ease;         /*this is the animation for the navbar to expand with grace*/
 }
 
 .navbar-nav {
@@ -341,6 +341,20 @@ body {
   padding: 10px 15px;
 }
 
+#backAbout {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25em;
+    box-sizing: border-box;
+    z-index: 30;
+    font-family: 'Fredoka one';
+    color: rgba(61, 61, 59, 0.6);
+    margin: 0;
+    letter-spacing: 10px;
+}
+
 /*=================================================================================================================
                                                      Skills Page
 =================================================================================================================*/
@@ -411,6 +425,22 @@ body {
     margin-right: 5px;
 }
 
+#backSkills {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15em;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 30;
+    font-family: 'Fredoka one';
+    color: rgba(61, 61, 59, 0.6);
+    margin: 0;
+    letter-spacing: 20px;
+    word-spacing: 10px;
+}
+
 /*====================================
             Projects Page
 ======================================*/
@@ -468,6 +498,21 @@ body {
     left: 32%;
   }
 
+  #backProjects {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25em;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 30;
+    font-family: 'Fredoka one';
+    color: rgba(61, 61, 59, 0.6);
+    margin: 0;
+    letter-spacing: 20px;
+}
+
 /*====================================
             Contact Page
 ======================================*/
@@ -524,4 +569,19 @@ body {
     font-family: "Source Code Pro", monospace;
     color: var(--bg-primary);
     font-weight: 400;
+}
+
+#backContact {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25em;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 30;
+    font-family: 'Fredoka one';
+    color: rgba(61, 61, 59, 0.6);
+    margin: 0;
+    letter-spacing: 20px;
 }
